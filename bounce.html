@@ -47,9 +47,9 @@
     *things that are to be drawn.
     */
    function draw() {
-   var context = bouncecanvas.getcontext('2d');
+   var context = bouncecanvas.getContext('2d');
    context.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
-   drawball(context);
+   drawBall(context);
    }
    // Redraw the canvas every REFRESH_TIME millisecond
    setInterval(draw, REFRESH_TIME);
