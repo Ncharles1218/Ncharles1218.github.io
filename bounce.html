@@ -24,20 +24,20 @@
       */
       function drawball(context) {
         //Move the ball
-        ballx = ballx + dx;
-        bally = ballx + dy;
+        ballX = ballX + dx;
+        ballY = ballX + dy;
         // If we've hit the top or bottom, turn around
         if (ballx > CANVAS_WIDTH || ballx < 0) {
         dx = -dx;
       }
       // If we've hit the top or bottom, turn around
-      if (bally > CANVAS_EIGHT || bally < 0) {
+      if (ballY > CANVAS_EIGHT || bally < 0) {
       dy = -dy;
     }
     // Actually draw the ball
     context.beginpath();
     context.fillstyle = BALL_COLOR;
-    context.arc(ballx, bally, BALL_RADIUS, 0, 2 * Math.PI, true);
+    context.arc(ballX, ballY, BALL_RADIUS, 0, 2 * Math.PI, true);
     context.closepath();
     context.fill();
   }
