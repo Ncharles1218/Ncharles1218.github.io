@@ -32,8 +32,11 @@
       {
         alert("times up!");
       };
+       var timeoutId = setTimeout (doHomeworkAlarm, 60000);
       
-      setTimeout(timeup, 3000);
+      clearTimeout(timeoutId);
+      
+      
       
      </script>
      
