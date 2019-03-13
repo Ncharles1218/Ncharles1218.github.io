@@ -34,7 +34,16 @@
           $("body").append("Click! " + event.pageX
                            + " " + event.pageY);
         };
-      
+      $("body").click(clickHandler);
+        
+        $("html").mousemove(function(event)
+        {
+          $("#heading").offset({
+            left: event.pageX,
+            top: event.pageY
+          });
+        });
+          
       </script>
     </body>
     
