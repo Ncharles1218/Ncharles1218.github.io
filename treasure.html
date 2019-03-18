@@ -39,6 +39,24 @@
       
       $("#map").click(function (event){
         
+        var distance = getDistanceToTreasure(event, treasure);
+        
+        if(distance <= 15)
+        {
+          alert ("You are close to the treasure!");
+          
+        }else{
+          
+        } if(distance <= 30)
+           {
+              alert("You are getting warmer!");
+           } else if (distance <= 100)
+           {
+             alert("You're making progress");
+           }else if (distance >=101)
+             alert("You need to keep looking!");
+      }
+                      }); 
         clicks++;
       });
     </script>
