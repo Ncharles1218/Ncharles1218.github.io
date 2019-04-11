@@ -1,48 +1,59 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Cars</title>
+    <title>Cars</title>
   </head>
   <body>
     <script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
     
     <script>
-    // all of your code for the jva script goes here
-    // we are going to create an objectcalled car
-    var Car = function(x,y)
-    {
-    this.x = x; // set the object's x and y values
-    this.y = y;
-    };
-    
-    // let's create an instance of this object called tesla
-    var tesla = new Car(10,20); //x1=10, y=20
-    
-    // lets create a method to draw a new car
-    var Car.prototype.draw = function()
-    {
-      var carHtml = '<img src="https:// nostarch.com/images/car.png">';
+      // All of your code for javascript goes here
+      // We are going to create an object called Car
+      var Car = function(x,y)
+      {
+        this.x = x; // set the object's x and y values
+        this.y = y;
+      };
       
-      this.carElement = $(carHtml);
+      // Let's create an instance of this object called tesla
+      var tesla = new Car(10,20); // x=10, y=20
       
-      carElement.css({
-        position: "absolute",
-        left: this.x,
-        top: this.y
+      // Let's create a method to draw a car
+      Car.prototype.draw = function()
+      {
+        var carHtml = '<img src="https://nostarch.com/images/car.png">';
+        
+        this.carElement = $(carHtml);
+        
+        this.carElement.css({
+          position: "absolute",
+          left: this.x,
+          top: this.y
         });
         
         $("body").append(this.carElement);
-    };
-    
-    tesla.draw();
-    var nissan = new Car(100, 200);
-    nissan.draw();
-    var charger = new Car(200, 500);
-    charger.draw();
-    var lambo = new Car(500, 700);
-    lambo.draw();
-    var bugatti = new Car(400, 800);
-    bugatti.draw();
+      };
+      
+      Car.prototype.moveRight = function()
+      {
+        this.x += 5; // adds 5 to the x value
+        
+        // this updates the position on the screen
+        this.carElement.css({
+          left: this.x, 
+          top: this.y
+        });
+      };
+      
+      tesla.draw();
+      tesla.moveRight();
+      tesla.moveRight();
+      tesla.moveRight();
+      var nissan = new Car(100, 200);
+      nissan.draw();
+      nissan.moveRight();
+      nissan.moveRight();
+      nissan.moveRight();
     </script>
   </body>
- </html>
+</html>
